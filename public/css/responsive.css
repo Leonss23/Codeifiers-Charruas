@@ -1,0 +1,197 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+:root {
+  --negro: #16171E;
+  --blanco: #FFFFFF;
+  --botones: #890909;
+  --primario: #621120;
+  --secundario: #732C3E;
+  --text-hover: #A57F3E;
+  --fondo-input: #BAAE7F;
+}
+
+/*Responsive para escritorio*/
+@media (orientation: landscape) {
+
+  body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    text-decoration: none;
+    overflow-x: hidden;
+    user-select: none;
+    font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Contrail One', cursive;*/
+
+  }
+
+  a {
+    text-decoration: none;
+    list-style: none;
+    color: var(--blanco);
+  }
+
+  a:hover {
+    cursor: pointer;
+  }
+
+  .publicidad {
+    width: 100%;
+    height: 100%;
+
+    animation: banner 10s infinite alternate cubic-bezier(0.19, 1, 0.22, 1);
+
+    background-size: 100% 100%;
+    margin: 2em auto 2em auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border: 2px solid red;*/
+  }
+
+  @keyframes banner {
+
+    0% {
+      background-image: url("../assets/img/Banner/UP-FEB22-DK.jpg");
+    }
+
+    8% {
+      background-image: url("../assets/img/Banner/UP-FEB22-DK.jpg");
+    }
+
+    33% {
+      background-image: url("../assets/img/Banner/SEPT-FEB22-DK.jpg");
+    }
+
+    41% {
+      background-image: url("../assets/img/Banner/SEPT-FEB22-DK.jpg");
+    }
+
+    66% {
+      background-image: url("../assets/img/Banner/ciber-banner-web-pc.jpg");
+    }
+
+    74% {
+      background-image: url("../assets/img/Banner/ciber-banner-web-pc.jpg");
+    }
+
+    100% {
+      background-image: url("../assets/img/Banner/UP-FEB22-DK.jpg");
+    }
+
+  }
+
+
+
+}
+
+@media screen and (max-width: 1024px) {
+
+  body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    text-decoration: none;
+    overflow-x: hidden;
+    user-select: none;
+    font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Contrail One', cursive;*/
+
+  }
+
+  a {
+    text-decoration: none;
+    list-style: none;
+    color: var(--blanco);
+  }
+
+  /*Banner de publicidad*/
+  .publicidad {
+    width: 100%;
+    height: 30%;
+
+    animation: banner 10s infinite alternate cubic-bezier(0.19, 1, 0.22, 1);
+
+    background-size: 100% 100%;
+    margin: calc(80px + 2vh) auto 0em auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border: 2px solid red;*/
+  }
+
+  @keyframes banner {
+
+    0% {
+      background-image: url("../assets/img/Banner/UP-FEB22-DK.jpg");
+    }
+
+    8% {
+      background-image: url("../assets/img/Banner/UP-FEB22-DK.jpg");
+    }
+
+    33% {
+      background-image: url("../assets/img/Banner/SEPT-FEB22-DK.jpg");
+    }
+
+    41% {
+      background-image: url("../assets/img/Banner/SEPT-FEB22-DK.jpg");
+    }
+
+    66% {
+      background-image: url("../assets/img/Banner/ciber-banner-web-pc.jpg");
+    }
+
+    74% {
+      background-image: url("../assets/img/Banner/ciber-banner-web-pc.jpg");
+    }
+
+    100% {
+      background-image: url("../assets/img/Banner/UP-FEB22-DK.jpg");
+    }
+
+  }
+
+
+}
+
+@media screen and (min-width:300px) and (max-width: 560px) {
+
+  body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    text-decoration: none;
+    overflow-x: hidden;
+    user-select: none;
+    font-family: 'Open Sans', sans-serif;
+    /*font-family: 'Contrail One', cursive;*/
+
+  }
+
+  a {
+    text-decoration: none;
+    list-style: none;
+    color: var(--blanco);
+  }
+
+  /*Banner de publicidad*/
+  div.publicidad {
+    display: none;
+  }
+
+
+  /*Titulo de los articulos*/
+  div.titulo {
+    /*width: 30vw;
+  height: 5vh;*/
+    /*background-color: #23232370;*/
+    text-align: center;
+    margin: 0px auto 1em auto;
+  }
+
+}

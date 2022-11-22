@@ -1,0 +1,460 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Contrail+One&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+:root{
+    --negro: #16171E;
+    --blanco: #FFFFFF;
+    --botones: #890909;
+    --primario: #621120;
+    --secundario: #732C3E;
+    --text-hover: #A57F3E;
+    --fondo-input:#BAAE7F;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+@media screen and (min-width: 1025px) {
+            /*Encabezado*/
+        header{
+        width: 100vw;
+        height: 20vh;
+        background-color: var(--negro);
+        position: fixed;
+        transition: 0.5s ease;
+        top:0%;
+        z-index: 2;
+        }
+
+        /*Contiene todas las cosas del menu*/
+        header div.container{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 100%;
+        }  
+
+        /*Menu para portait*/
+        #menu_despl{
+            display: none;
+        }
+        .portrait_menu{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        img.logo{
+            padding: 1vw;
+        }
+        div.img-logo-mobile{
+            display: none;
+        }
+        /*Tamaño del menu*/
+        nav{
+            width: auto;
+            /* height: 100%; */
+            display: flex;
+            /* background-color: #2336b9; */
+            right: 2vw;
+            position: relative;
+        }
+        ul{
+        list-style: none;
+        text-align: center;
+        padding: 0;
+            margin: 0;
+        }
+        /*Listado del menu */
+        #menu>li{
+        float: left;
+        text-align:center
+        
+        }
+        #menu>li#contacto{
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+        }
+        /*Tamaño del listado del menu*/
+        #menu li>a{
+        color: white;
+        padding: 10px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        font-size: 1em;
+        }
+        #menu li>a:hover{
+        color: var(--blanco);
+        background-color: var(--botones);
+        border-radius: 1px;
+        }
+        /*Buscador de producto*/
+        input#buscar_producto{
+            height: 100%;
+            background: transparent;
+            border: 0;
+            box-shadow: 0px 0px 1px 0px white;
+            color: white;
+            text-align: center;
+        }
+        /*Iconos del menu*/
+        div.userPC{
+            display: flex;
+            font-size: calc(10px + 0.6em);
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            align-content: center;
+            position: absolute;
+            top: 0vw;
+            right: 3vw;
+        }
+        /*Contenedor carrito y sus objetos*/
+        div.carrito{
+            display: flex;
+            color: white;
+            width: 67px;
+            height: 50px;
+            /*border: 1px solid white;*/
+            /* border-radius: 50%; */
+            align-items: center;
+            justify-content: center
+            } 
+        div.carrito p.cantidad{
+        color: white;
+        }
+
+        /*Icono de Usuario*/
+        .fa-user, .fa-user-check{
+        padding: calc(5px + 0.5em);
+        color: white;
+        }
+
+        /*Icono de carrito*/
+        .fa-bag-shopping{
+        padding: calc(5px + 0.1em);
+        }
+        /*Al pasar el mouse por los iconos*/
+        .fa-user:hover,.fa-bag-shopping:hover, .fa-user-check:hover{
+        color: var(--botones);
+        cursor: pointer;
+        
+        }
+    }
+
+@media screen and (max-width: 1024px) {
+    header{
+        width: 100%;
+        height: 10vh;
+        background-color: var(--negro);
+        position: fixed;
+        box-shadow: 0px 0px 10px 0px white;
+        top: 0;
+        z-index: 2;
+    }
+      
+        
+        /*Contiene todas las cosas del menu*/
+        header div.container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        }
+        #menu_despl{
+            color: white;
+            font-size: 8vw;
+            position: relative;
+            float: right;
+            top: 0vw;
+            left: 47%;
+            z-index: 2;
+        }
+        .portrait_menu{
+            display: block;
+            
+        }
+        .portrait_menu{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            transition: ease 0.7s;
+            transform: translateX(100vw);
+            background-color: rgb(37, 37, 37);
+            box-shadow: 0px 3px 0px 0px snow;
+            font-size: 2vw;
+            z-index: 1;
+        }
+        /*Despliegue del menu*/
+        .portrait_menu.toggled{
+            transform: translateX(0); 
+        }
+        div.img-logo{
+            display: none;
+        }
+        div.img-logo-mobile{
+            float: right;
+            position: relative;
+            top: 0;
+            display: flex;
+            left: 45%;
+            object-fit: fill;
+            width: 100px;
+            height: 100%;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+        }
+        div.img-logo-mobile img{
+           width: 70px;
+           height: 100%;
+        }ntainer carrito*/
+        div.carrito{
+            position: relative;
+            /* background-color: #333; */
+            display: flex;
+            right: 0vw;
+            width: 66px;
+            height: 45px;
+            align-items: center;
+            justify-content: center;
+          } 
+          /*Tamaño del menu*/
+        nav{
+            width: 100vw;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            /* background-color: #2336b9; */
+            align-content: center;
+            align-items: center;
+        }
+        
+        ul{
+            list-style: none;
+            padding: 0;
+            /* padding-top: 10vh; */
+            margin: 0;
+            height: 50%;
+            width: 100%;
+            display: flex;
+            text-align: center;
+            /* background: #969606; */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            }
+             /*Listado del menu */
+        #menu>li{
+            text-align:center;
+            text-align: center;
+            width: auto;
+            padding: 10px;
+            
+            }
+            /*Tamaño del listado del menu*/
+            #menu li>a{
+            color: white;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1em;
+            }
+            #menu li>a:hover{
+            color: var(--blanco);
+            background-color: var(--botones);
+            border-radius: 1px;
+            cursor: pointer;
+            }
+                    /*Iconos del menu*/
+        div.userPC{
+            display: flex;
+            align-items: center;
+            align-content: center;
+            position: relative;
+            top: 0;
+            height: 100%;
+            width: 210px;
+            float: left;
+            left: -46vw;
+            font-size: 35px;
+            justify-content: center;
+        }
+            
+            div.carrito{
+                display: flex;
+                align-items: center;
+                width: 71px;
+                justify-content: space-evenly;
+            }
+            /*Icono de Usuario*/
+            .fa-user, .fa-user-check{
+            padding: calc(5px + 0.5em);
+            color: white;
+            }
+  
+        
+                /*Icono de Usuario*/
+                .fa-user, .fa-user-check{
+                padding: calc(5px + 0.5em);
+                color: white;
+                }
+       
+}
+
+@media screen and (max-width: 768px){
+    header{
+        width: 100vw;
+        height: 10vh;
+        background-color: var(--negro);
+        z-index: 2;
+        }
+        /*Contiene todas las cosas del menu*/
+        header div.container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        position: fixed;
+        height: 10%;
+        background-color: var(--negro);
+        }
+        #menu_despl{
+            color: white;
+            font-size: 8vw;
+            position: relative;
+            float: right;
+            top: 0vw;
+            left: 56%;
+            z-index: 2;
+        }
+        .portrait_menu{
+            display: block;
+            
+        }
+        .portrait_menu{
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            transform: translateX(110vw);
+            background-color: rgb(37, 37, 37);
+            box-shadow: 0px 3px 0px 0px snow;
+            font-size: 2vw;
+            z-index: 1;
+        }
+        /*Despliegue del menu*/
+        .portrait_menu.toggled{
+            transform: translateX(0); 
+        }
+        div.img-logo{
+            display: none;
+        }
+        div.img-logo-mobile{
+            float: right;
+            position: relative;
+            top: 0;
+            display: flex;
+            left: calc(100px + 32vw);
+            object-fit: fill;
+            width: 100px;
+            height: 100%;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+        }
+        div.img-logo-mobile img{
+            width: 35px;
+            height: 61px;
+        }
+
+        /*Container carrito*/
+        div.carrito{
+            position: relative;
+            /* background-color: #333; */
+            display: flex;
+            right: 0vw;
+            width: 66px;
+            height: 45px;
+            align-items: center;
+            justify-content: space-around
+          } 
+        /*Tamaño del menu*/
+        nav{
+            width: 100vw;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            /* background-color: #2336b9; */
+            align-content: center;
+            align-items: center;
+        }
+        
+        ul{
+            list-style: none;
+            padding: 0;
+            /* padding-top: 10vh; */
+            margin: 0;
+            height: 50%;
+            width: 100%;
+            display: flex;
+            text-align: center;
+            /* background: #969606; */
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            }
+             /*Listado del menu */
+        #menu>li{
+            text-align: center;
+            text-align: center;
+            font-size: 2vh;
+            width: auto;
+            padding: 10px;
+            
+            }
+            /*Tamaño del listado del menu*/
+            #menu li>a{
+            color: white;
+            padding: 10px;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+            font-size: 1em;
+            }
+            #menu li>a:hover{
+            color: var(--blanco);
+            background-color: var(--botones);
+            border-radius: 1px;
+            }
+                    /*Iconos del menu*/
+        div.userPC{
+            display: flex;
+            align-items: center;
+            align-content: center;
+            position: relative;
+            top: 0;
+            float: left;
+            left: -35vw;
+            font-size: 25px;
+            }
+            /*Icono de Usuario*/
+            .fa-user, .fa-user-check{
+            padding: calc(5px + 0.5em);
+            color: white;
+            }
+  
+        
+                /*Icono de Usuario*/
+                .fa-user, .fa-user-check{
+                padding: calc(5px + 0.5em);
+                color: white;
+                }
+}

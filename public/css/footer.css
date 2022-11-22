@@ -1,0 +1,407 @@
+@media  screen and (min-width: 1025px){
+
+div.publicidad-footer{
+    width: 90%;
+    height: 35vw;
+    display: flex;
+    align-content: flex-start;
+    justify-content: center;
+    margin: auto;
+    flex-direction: column;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+div.publicidad-footer .img-publicidad-footer{
+    width: 100%;
+    height: 20vh;
+    
+}
+/*Footer publicidad*/
+
+div.publicidad_footer {
+	width: 30vw;
+	height: 40vh;
+ /* border: 1px solid black;*/
+  animation: banner_footer 5s infinite alternate;
+	background-size: 100% 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  /*border: 2px solid red;*/
+}
+@keyframes banner_footer{
+    
+        0%{background-image: url("../assets/img/Publicidad/1.png");}
+        20%{background-image: url("../assets/img/Publicidad/1.png");}
+        40%{background-image: url("../assets/img/Publicidad/2.png");}
+        60%{background-image: url("../assets/img/Publicidad/2.png");}
+        80%{background-image: url("../assets/img/Publicidad/3.png");}
+        100%{background-image: url("../assets/img/Publicidad/3.png");}
+
+
+    
+}
+div.publicidad-footer .img-publicidad-footer img{
+  height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  position: relative;
+  object-fit: fill;
+  border: 2px solid;
+
+} 
+div.pack-img-publicidad{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 16vw 16vw 16vw;
+    justify-items: center;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1em;
+}
+div.content-img-publicidad{
+    width: 280px;
+    height: 280px;
+    overflow: hidden;
+}
+
+div.content-img-publicidad img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+    
+/*Pie de pagina*/
+footer{
+    margin-top: 1vw;
+    width: 100vw;
+    height: calc(300px + 3vh);
+    background-color: #1a1a1a;
+    overflow: hidden;
+    user-select: none;
+    user-zoom: none;
+  }
+  footer section#contacto{
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  /*Contenedor del contenido*/
+  footer section#contacto div.content{
+    text-align: center;
+    width: calc(200px + 5vw);
+    height: calc(200px + 1vh);
+    /*background-color: #616161;*/
+    color: var(--blanco);
+    overflow: hidden;
+  
+  }
+  /*Contenido de contenedor MI CUENTA*/
+  footer section#contacto div.content p>a:hover{
+    color: var(--botones);
+  }
+  
+  /*Contenido de contenedor REDES SOCIALES*/
+  footer section#contacto div.content div.iconos-footer{
+    font-size: calc(15px + 0.6vw);
+  }
+  .fa-facebook{
+    margin-left: 10px;
+  }
+  .fa-facebook:hover{
+    color: #3b5998 ;
+    cursor: pointer;
+  }
+  .fa-instagram:hover{
+    color: #ff2828be;
+    cursor: pointer;
+  }
+  
+    /*Contenedor de forma de pago */
+    article.photos{
+      width: auto;
+      height: 20vh;
+      overflow: hidden;
+      /*background-color: #890909;*/
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+  }
+    
+  /*Contenedor de las imagenes*/
+  article.photos div.photos{
+    width:max-content;
+    height: max-content;
+    /*background-color: #16171E;*/
+    overflow: hidden;
+    transform: scale(0.5);
+  }
+  /*Tamaño de las imagenes*/
+  article.photos div.photos img{
+    width: 100%;
+    height: 100%;
+  }
+  
+  
+  /*CONTENEDOR CODEIFIERS*/
+  footer div.codeifiers{
+    /*position: absolute; */
+    display: flex;
+    width: 100%;
+    height: 20vh;
+    overflow: hidden;
+    text-align: center;
+    align-items: center;
+    margin-top: -2vw;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  footer div.codeifiers img{
+    width: 75px;
+    height: 75px;
+  }
+  
+  /*Etiqueta separadora*/
+  hr{
+    position: absolute;
+    color: rgba(65, 65, 65, 0.61);
+    width: 100vw;
+    margin-top: 25vh;
+  }
+  
+  div.address{
+    color: #414141;
+    /* position: absolute; */
+    display: flex;
+    width: 100vw;
+    height: auto;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 1024px){
+    div.publicidad-footer{
+        width: 90%;
+        height: 15vw;
+        display: flex;
+        align-content: flex-start;
+        justify-content: center;
+        margin: auto;
+        border: 2px solid;
+        flex-direction: column;
+        overflow: hidden;
+        margin-top: 1vw;
+    }
+    div.publicidad-footer .img-publicidad-footer{
+        width: 100%;
+        height: 100%;
+        
+    }
+    div.publicidad-footer .img-publicidad-footer img{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border: 2px solid;
+    }
+    div.pack-img-publicidad{
+  display: none;
+    }
+/*Pie de pagina*/
+footer{
+    margin-top: 1.5em;
+    width: 100vw;
+    height: 32vh;
+    background-color: #1a1a1a;
+    overflow: hidden;
+    user-select: none;
+  }
+  footer section#contacto{
+    width: 100%;
+    margin: 0px;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  /*Contenedor del contenido*/
+  footer section#contacto div.content{
+    text-align: center;
+    width: 300px;
+    height: auto;
+    /* background-color: #616161; */
+    color: var(--blanco);
+    overflow: hidden;
+    font-size: 2vw;
+  
+  }
+  footer section#contacto div#account{
+    display: none;
+  }
+  
+  /*Contenido de contenedor REDES SOCIALES*/
+  footer section#contacto div.content div.iconos-footer{
+    font-size: calc(15px + 0.6vw);
+  }
+  .fa-facebook{
+    margin-left: 10px;
+  }
+  
+    /*Contenedor de forma de pago */
+    article.photos{
+  display: none;
+  }
+
+    /*Etiqueta separadora*/
+    hr{
+        color: rgb(65, 65, 65);
+        width: 100vw;
+        margin-top: 1vh;
+      }
+  /*CONTENEDOR CODEIFIERS*/
+  footer div.codeifiers{
+    display: grid;
+    justify-items: center;
+    /* position: absolute; */
+    width: 100%;
+    height: 96px;
+    margin-top: -8.4vh;
+    text-align: center;
+    justify-content: center;
+    align-items: end;
+    align-content: space-between;
+  }
+  footer div.codeifiers img{
+    width: 45%;
+    height: 100%;
+  }
+  
+  div.address{
+    color: #ffffff79;
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    height: auto;
+    font-size: 14px;
+    justify-content: center;
+    margin-top: 13vh;
+  }
+}
+
+@media (max-width: 768px){
+    div.publicidad-footer{
+        width: 90%;
+        height: 15vw;
+        display: flex;
+        align-content: flex-start;
+        justify-content: center;
+        margin: auto;
+        border: 2px solid;
+        flex-direction: column;
+        overflow: hidden;
+        margin-top: 1vw;
+    }
+    div.publicidad-footer .img-publicidad-footer{
+        width: 100%;
+        height: 100%;
+        
+    }
+    div.publicidad-footer .img-publicidad-footer img{
+        width: 100%;
+        height: 100%;
+        object-fit: fill;
+        border: 2px solid;
+    }
+    div.pack-img-publicidad{
+  display: none;
+    }
+    /*Pie de pagina*/
+footer{
+    margin-top: 1em;
+    width: 100vw;
+    height: auto;
+    background-color: #1a1a1a;
+    overflow: hidden;
+    user-select: none;
+  }
+  footer section#contacto{
+    width: 100%;
+    margin: 0px;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  /*Contenedor del contenido*/
+  footer section#contacto div.content{
+    text-align: center;
+    width: 300px;
+    height: auto;
+    /* background-color: #616161; */
+    color: var(--blanco);
+    overflow: hidden;
+    font-size: 0.8em;
+  
+  }
+  footer section#contacto div#account{
+    display: none;
+  }
+  
+  /*Contenido de contenedor REDES SOCIALES*/
+  footer section#contacto div.content div.iconos-footer{
+    font-size: calc(15px + 0.6vw);
+  }
+  .fa-facebook{
+    margin-left: 10px;
+  }
+  
+    /*Contenedor de forma de pago */
+    article.photos{
+  display: none;
+  }
+
+    /*Etiqueta separadora*/
+    hr{
+        color: rgb(65, 65, 65);
+        width: 100vw;
+     
+      }
+  /*CONTENEDOR CODEIFIERS*/
+  footer div.codeifiers{
+    display: grid;
+    justify-items: center;
+    /* position: absolute; */
+    width: 100%;
+    height: 15vh;
+    margin-top: 0vh;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    align-content: space-between;
+
+  }
+  footer div.codeifiers img{
+    width: 35%;
+    height: 100%;
+  }
+  
+  div.address{
+    color: #ffffff79;
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    height: auto;
+    font-size: 14px;
+    justify-content: center;
+    margin-top: 4vh;
+  }
+}
