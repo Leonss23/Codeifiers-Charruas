@@ -10,13 +10,16 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 --
--- Base de datos: `charruas`
+-- Base de datos: `dbemt3grp03`
 --
 
 -- --------------------------------------------------------
 --
 -- Estructura de tabla para la tabla `administrador`
 --
+CREATE DATABASE dbemt3grp03;
+USE dbemt3grp03;
+
 
 CREATE TABLE `administrador` (`nom_admin` varchar(100) NOT NULL) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
 --
