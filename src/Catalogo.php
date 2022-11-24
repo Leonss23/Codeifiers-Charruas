@@ -1,11 +1,12 @@
 <!--PHP-->
 <?php 
+ error_reporting(0);
     include ('includes/bd.php');
     
     $conexion = new Conexion();
     $producto=$conexion -> consulta('producto','*',"");
     session_start(); 
-    //error_reporting(0);
+   
     $nomUser=$_SESSION['usuario'];
     if(isset($nomUser)){
         $usuario=$conexion -> consulta('usuario','*'," nom_usr='$nomUser'");
@@ -29,6 +30,7 @@
     <link rel="icon" href="../public/assets/img/Logo/Logo Charruas.png" width="200" height="100">
     <link rel="stylesheet" href="../public/css/header.css">
     <link rel="stylesheet" href="../public/css/footer.css">
+    <link rel="stylesheet" href="../public/css/User.css">
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   

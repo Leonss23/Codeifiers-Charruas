@@ -6,13 +6,14 @@
     <div class="content" id="account">
     <a href="account.php"><h2 class="title">MI CUENTA</h2></a>
    <p><a href="">Mi Dirección</a> </p>
-   <p><a href="">Mis Compras</a> </p>
-   <p><a href="cerrar-sesion.php">Cerrar sesion</a> </p>
+   <p><a href="../src/historial_carrito.php">Mis Compras</a> </p>
+   <p><a href="../src/cerrar-sesion.php">Cerrar sesion</a> </p>
 
     </div>
     <div class="content">
         <h2 class="title">CONTACTANOS</h2>
-        <p><a href="#">charruas@gmail.com</a></p>
+        <p><a href="mailto:charruascodeifiers@gmail.com?Subject=Quisiera%20saber%20mas%20de%20sus%20productos">
+          charruas@gmail.com</a></p>
     
     </div>
     <div class="content">

@@ -1,6 +1,6 @@
 <?php
     include ('../src/includes/bd.php');
-     $conexion = new Conexion();
+    $conexion = new Conexion();
     session_start(); 
     $session = $_SESSION['usuario'];
     $conn = $conexion -> connexc();
@@ -22,7 +22,9 @@
         //echo $cantidad;
         $sql = $conn->prepare("UPDATE tiene_producto SET cantidad=? WHERE id_cart='{$cart[0][0]}' AND  id_prod=?");
         $sql->execute([$cantidad, $id]);
-        echo "UPDATE DATABASE realizado con exito. {$row['cantidad']}";
+        
+        //echo "UPDATE DATABASE realizado con exito. $sql .";
+        
        
     }
    

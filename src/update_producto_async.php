@@ -15,6 +15,7 @@
         if(strcmp($row['id_prod'], $id)==0){$cantidad = $row['stock'];}
     }
     //+= $_POST['cantidad']
+    if(isset($_POST['cantidad'])){
     
             $ver = $cantidad += $_POST['cantidad'];
             if($ver > 0){
@@ -34,10 +35,9 @@
                 $sqlG = $conn->prepare("INSERT INTO gestiona (nom_emp,id_prod) VALUES (?,?)");
                 $sqlG->execute([$session,$id]);
             }
-        
+    }
        //echo $cantidad += $_POST['cantidad'];
         
 
     
-
 

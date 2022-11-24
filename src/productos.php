@@ -24,6 +24,10 @@ include('includes/headerAdmin.php');
 ?>
 
   <div class="contenido"> <!--Lista de Productos-->
+    <div id="mensaje" class="mensaje"  style="display: none;">
+ 
+    <h2 id="Agregado_texto">Artículo añadido correctamente a tu compra</h2>
+    </div>
 <div class="container mt-5"> <!--Separa de los borde-->
                     <div class="row"><!--Divide en 2 partes-->
                         <?php
@@ -74,8 +78,14 @@ include('includes/headerAdmin.php');
                             }
                             ?>
                          
+                        <?php
+                        if($usuario[0][2]==2){
+                            echo '<div class="col-md-8" style="height: 100vh;">';
+                        }else{
+                            echo '<div class="col-md-8" style="height: 40vh;">';
+                        }
+                        ?>
                         
-                        <div class="col-md-8" >
 
                             <table class="table" style="text-align: center;">
                                 <thead class="table caption-top" >
@@ -120,8 +130,7 @@ include('includes/headerAdmin.php');
                                                       
                                  foreach($producto as $p){
                                    
-                                        echo '<tr data-aos="fade-up"
-                                        data-aos-anchor-placement="center-bottom">';
+                                        echo '<tr>';
                                         echo  "<th><img class='img_prod' src='" . $p['imagen'] . "'></th>";
                                         echo "<th>".$p['nombre']."</th>";
                                         echo "<th>".$p['precio']."</th>";
@@ -130,14 +139,20 @@ include('includes/headerAdmin.php');
                                         if($usuario[0][2]==2){
                                             if($p['stock'] < 10){
                                                 echo '<th> <input type="number" id="cantidad'.$p['id_prod'].'" value="'.$p['stock'].'" 
-                                                style="width: 100%; height: 10vh; border: 0;  text-align: center; font-size:15px; color: red;">
+                                                style="width: 100%; height: 10vh; border: 0;  text-align: center; font-size:15px; color: red; background: transparent;"  disabled>
                                             </th>
                                         ';
+                                        echo '<th id="agregar_stock"> <input type="hidden" class="cantidad_update" id="cantidad_update'.$p['id_prod'].'"  
+                                         placeholder="Agregar stock" >
+                                        </th>';
                                             }else{
                                                 echo '<th> <input type="number" id="cantidad'.$p['id_prod'].'" value="'.$p['stock'].'" 
-                                                style="width: 100%; height: 10vh; border: 0;  text-align: center; font-size:15px;">
+                                                style="width: 100%; height: 10vh; border: 0;  text-align: center; font-size:15px; background: transparent;"  disabled>
                                             </th>
                                         ';
+                                        echo '<th id="agregar_stock"> <input type="hidden" class="cantidad_update" id="cantidad_update'.$p['id_prod'].'"  
+                                        placeholder="Agregar stock" >
+                                        </th>';
                                             }
                                            
                                         }else{
@@ -153,7 +168,8 @@ include('includes/headerAdmin.php');
                                     echo '</tr>';
                                      }else if($usuario[0][2]==2){ //Si es empleado solo vera..
                                         echo"
-                                        <th title='Editar' class='btn btn-info'   onclick='update_producto({$p['id_prod']});'><i class='fa-solid fa-pen-to-square'></i></th>
+                                        <th title='Editar' class='btn btn-info'   onclick='habilitar_update({$p['id_prod']});'><i class='fa-solid fa-pen-to-square'></i></th>
+                                        <th title='Actualizar' class='btn btn-info'   onclick='update_producto({$p['id_prod']});'><i class='fa-solid fa-download'></i></i></th>
                                         ";
                                      }
                                     }
@@ -165,6 +181,7 @@ include('includes/headerAdmin.php');
                             </table>
                         </div>
                     </div>  
+                    
             </div>
             </div>
             <script src="../public/js/actualizar_stock.js"></script>

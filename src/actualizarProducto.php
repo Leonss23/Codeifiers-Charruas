@@ -32,8 +32,8 @@ $producto=$conexion -> consulta('producto','*'," id_prod='$id' ");
                                 <p>Precio:</p><input type="text" class="form-control mb-3" name="precio" placeholder="Precio" value="<?php echo $producto[0][2];  ?>">
                                 <p>Descripcion:</p><input type="text" class="form-control mb-3" name="descripcion" placeholder="Descripcion" value="<?php echo $producto[0][5];  ?>">
                                 <p>Fecha de Alta:</p><input type="text" class="form-control mb-3" name="fecha" placeholder="Fecha" value="<?php echo $producto[0]['fec_alta'];  ?>"disabled>
-                                <p>Imagen:</p><input type="text" class="form-control mb-3" name="imagen" placeholder="Imagen" value="<?php echo $producto[0][3];  ?>">
-                            <input type="submit" class="btn btn-primary btn-block" value="Actualizar">
+
+                            <input type="submit"  name="submit" class="btn btn-primary btn-block" value="Actualizar">
                     </form>
                     
                 </div>

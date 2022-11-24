@@ -22,4 +22,4 @@
     $sql = "UPDATE tiene_producto SET cantidad=? WHERE id_cart='{$cart[0][0]}' AND  id_prod=?";
     $valor = $conn->prepare($sql)->execute([$cantidad, $id]);
 
-    echo "UPDATE DATABASE realizado con exito. {$valor}";
+    // echo "UPDATE DATABASE realizado con exito. {$valor}";

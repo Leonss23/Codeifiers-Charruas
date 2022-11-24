@@ -85,6 +85,35 @@
                     ?>
                     
                 </ul>
+             
+                        <?php
+                        if(isset($_SESSION['usuario'])){
+                            if(basename($_SERVER['PHP_SELF'])!='index.php'){
+                                            
+                                                echo "
+                                                    <div class='cuenta'> 
+                                                        <div class='logout'>
+                                                            <div class='red-circle circle'> </div>
+                                                                <a href='cerrar-sesion.php'>Salir</a>
+                                                        </div>
+                                    
+                                                    </div>
+                                                ";
+                            }else{
+                                echo "
+                                <div class='cuenta'> 
+                                    <div class='logout'>
+                                        <div class='red-circle circle'> </div>
+                                            <a href='../src/cerrar-sesion.php'>Salir</a>
+                                    </div>
+                
+                                </div>
+                            "; 
+                            }                   
+                        }
+                                            
+                        ?>
+             
             </nav>
             <?php
                            
@@ -119,17 +148,7 @@
                     ";
                     }
                        
-                    if(basename($_SERVER['PHP_SELF'])=='Account.php'){
-                        echo "
-                            <div class='cuenta'> 
-                                <div class='logout'>
-                                    <div class='red-circle circle'> </div>
-                                        <a href='cerrar-sesion.php'>Salir</a>
-                                </div>
-            
-                            </div>
-                        ";
-                    }
+
                         
                     }
                 }else{ //Si no existe Inicio de Sesion, le muestra para iniciarla
@@ -190,33 +209,3 @@
 
     </header>
  
-
-<script>
-    let menu_min = false;
-    if (window.matchMedia("(min-width: 1025px)").matches){
-    window.onscroll = () => {
-        let y = window.scrollY;
-        if (y > 50 ) {
-            //console.log(y);
-            menu_min = true;
-            document.querySelector("header").style.height = "10vh";
-           document.querySelector("header").style.position = "fixed";
-            document.querySelector("header").style.zIndex = "2";
-            document.querySelector('nav').style.width = "auto";
-            document.querySelector('nav').style.display = "flex";
-            document.querySelector('nav').style.right = "4vw";
-            document.querySelector('nav').style.position = " static";
-            document.querySelector('.userPC').style.position = " relative";
-            document.querySelector('.portrait_menu').style.position= "sticky";
-            document.querySelector('.portrait_menu').style.right= "2vw";
-            
-        }
-        
-        if(y<50 && menu_min==true){
-            menu_min=false;
-            document.querySelector("header").style.height = "20vh";
-       // console.log(y);
-        }
-        }
-    }
-</script>

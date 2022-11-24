@@ -1,27 +1,26 @@
 <?php
 
-//Cuenta paypal: sb-omem615277760@personal.example.com
-//Contraseña: codeifiers
-
-    error_reporting(0);
-    include ('includes/bd.php');
-    $conexion = new Conexion();
-    $conn = $conexion -> connexc();
- session_start(); 
- $nomUser=$_SESSION['usuario'];
-
-    session_start(); 
+error_reporting(0);
+include ('includes/bd.php');
+$conexion = new Conexion();
+$conn = $conexion -> connexc();
+session_start();
+if(isset($_SESSION['usuario'])){
+      
     $nomUser=$_SESSION['usuario'];
+    $usuario=$conexion -> consulta('usuario','*'," nom_usr='$nomUser'");
+    $persona=$conexion -> consulta('persona','*'," ci='{$usuario[0][3]}'");
 
-    if(isset($nomUser)){
-        $usuario=$conexion -> consulta('usuario','*'," nom_usr='$nomUser'");
-        $persona=$conexion -> consulta('persona','*'," ci='{$usuario[0][3]}'");
-   
-    $nombre= ucfirst(utf8_decode($persona[0][1]));
-    $apellido= ucfirst(utf8_decode($persona[0][2]));
-    $cart_cant=$conexion -> consulta('productos_carrito','COUNT(id_prod) Cantidad',""); //Carrito aCTIVO
+$nombre= ucfirst(utf8_decode($persona[0][1]));
+$apellido= ucfirst(utf8_decode($persona[0][2]));
+$cart_cant=$conexion -> consulta('productos_carrito','COUNT(id_prod) Cantidad',""); //Carrito aCTIVO
 
-    }
+
+
+}else{
+    header("Location: ../src/formulario.php");
+}
+
                
 ?>
 <!DOCTYPE html>
@@ -39,6 +38,7 @@
     <link rel="stylesheet" href="../public/css/footer.css">
     <link rel="stylesheet" href="../public/css/responsive.css">
     <link rel="stylesheet" href="../public/css/cart.css">
+    <link rel="stylesheet" href="../public/css/User.css">
 </head>
 <body>
 <?php 
@@ -123,13 +123,13 @@ include('includes/header.php');
         
          <script src="https://www.paypal.com/sdk/js?client-id=AZ4io7vie-biTXKJG9BhTzEhrUCp3pZapVTmKuEoAtfIsvB2KZJkraI8KqpvNp1z7ySm2X3NPf2PbXY_&currency=MXN"></script>
 
-        <script>
-paypal.Buttons({
-    style:{
-    color: 'blue',
-    shape: 'pill',
-    label: 'pay'
-},
+<script>
+    paypal.Buttons({
+        style:{
+        color: 'blue',
+        shape: 'pill',
+        label: 'pay'
+    },
     // Agregar transaccion
     createOrder: function(data, actions) {
     return actions.order.create({
@@ -158,7 +158,8 @@ paypal.Buttons({
       }
     })
     .then(function (texto) {
-      console.log(texto);      
+      console.log(texto); 
+      window.location.href="../public/index.php";     
     
     })
     .catch(function (err) {
@@ -172,8 +173,8 @@ paypal.Buttons({
                 //console.log(`Orden cancelada`,data);
                     }
 
-}).render('#paypal-button-container');
-        </script>
+    }).render('#paypal-button-container');
+</script>
 
     </div>
     <div id="container_button_pay">

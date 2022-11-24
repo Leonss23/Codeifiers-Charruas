@@ -150,7 +150,11 @@ div.cuenta{
     display: flex;
     align-items: center;
     align-content: center;
+    position: absolute;
     justify-content: center;
+    top: 45vh;
+    right: 2vw;
+    font-size: 30px;
   }
 
 /*Contenido*/
@@ -238,7 +242,11 @@ div.cuenta{
     display: flex;
     align-items: center;
     align-content: center;
+    position: absolute;
     justify-content: center;
+    bottom: -5vw;
+    right: 0;
+    font-size: 16px;
   }
 
 /*Contenido*/

@@ -4,11 +4,14 @@
     $conn = $conexion -> connexc();
  session_start(); 
  $nomUser=$_SESSION['usuario'];
+ $cart_cant=$conexion -> consulta('productos_carrito','COUNT(id_prod) Cantidad',"Cliente = '{$nomUser}'"); //Carrito aCTIVO
    $cart = $conn->query("SELECT * FROM productos_carrito WHERE Cliente = '$nomUser'")->fetchAll();
    //Carrito aCTIVO
 
            $totalprice = 0; // cree una variable para guardar el precio total, cada vez que se carga un producto al carrito, agregas el precio total de cada producto a esta variable, ya esta capo q tanto drama.
-          echo "
+      
+           if($cart_cant[0][0] > 0){
+           echo "
        
           <div class='container_cart' id='container_cart'>
               <table class='table' >
@@ -29,6 +32,7 @@
                    </thead>
                    <tbody  id='content_cart' style='color:black'>
           ";
+           }
            foreach($cart as $row){
                $totalprice += $row["Precio"];
             if(substr($row['Imagen'], 0, 4) == "http")
@@ -65,11 +69,13 @@
               </div>
             </th>
            <th>$".$row['Precio']."</th>
-           <th><i class='fa-solid fa-xmark' onclick='eliminar({$row['id_prod']});'></i></th>
+           <th><i class='fa-solid fa-xmark' id='eliminar_producto_carrito' onclick='eliminar({$row['id_prod']});' title='Eliminar del carrito'></i></th>
            
              </tr>
+             
    
              ";
+             
       
 
         }
@@ -85,5 +91,11 @@
     </div>
 
         ";
-
+        if($cart_cant[0][0]> 0){
+            echo "
+                <div class='boton_pago'>
+                    <a href='realizar_pago.php'>Realizar Pago</a>
+                 </div>
+                 ";
+            }
 ?>

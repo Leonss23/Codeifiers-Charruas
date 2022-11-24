@@ -55,7 +55,7 @@ function scrollUp(){
     var currentScroll = document.documentElement.scrollTop;
     
     window.scrollTo (0, currentScroll / currentScroll );
-    console.log( currentScroll - (currentScroll / currentScroll));
+    //console.log( currentScroll - (currentScroll / currentScroll));
 }
 
 
@@ -66,7 +66,7 @@ window.onscroll = function(){
     if (window.scrollY >= 200){
         buttonUp.style.display="flex";
         buttonUp.style.transform = "scale(1)";
-        console.log(scroll);
+        //console.log(scroll);
     } else
     if(window.scrollY < 600){
         buttonUp.style.transform = "scale(0)";

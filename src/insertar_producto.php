@@ -6,7 +6,6 @@ $session = $_SESSION['usuario'];
 
 if(isset($session)){
 
-    echo "Hola";
 
     	// verifica que se recibieron datos
 	if(isset($_POST['submit'])) {

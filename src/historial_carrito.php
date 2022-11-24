@@ -1,7 +1,6 @@
 <?php
     error_reporting(0);
 
-   
     include ('validacion.php');
     $conexion = new Conexion();
 
@@ -29,59 +28,77 @@
     <script src="https://kit.fontawesome.com/775c1cb76a.js" crossorigin="anonymous"></script>
     <script src="https://www.paypal.com/sdk/js?client-id=AZ4io7vie-biTXKJG9BhTzEhrUCp3pZapVTmKuEoAtfIsvB2KZJkraI8KqpvNp1z7ySm2X3NPf2PbXY_&currency=USD"></script>
     
-    <title>Charrúa - Carrito</title>
+    <title>Charrúa - historial</title>
 
     <link rel="icon" href="../public/assets/img/Logo/Logo Charruas.png" width="200" height="100">
     <link rel="stylesheet" href="../public/css/header.css">
     <link rel="stylesheet" href="../public/css/footer.css">
     <link rel="stylesheet" href="../public/css/cart.css">
-    <link rel="stylesheet" href="../public/css/User.css">
 </head>
 <body>
 <?php 
 include('../src/includes/header.php');
 ?>
-    <!--Titulo de los articulos-->
-    <div class="titulo">
-    <?php
-    if($cart_cant[0][0] == 0){
-        echo"
-        <h2>Su carrito esta vacio.</h2>
-        ";
-    }else{
-        echo "	<h1 class='title'>Su pedido&nbsp/
-        <h2 id='cantidad_carrito'>{$cart_cant[0][0]}</h2>
-    </h1>
 
-    ";
     
-    }
-    ?>
-
+<div class="historial" id="historial">
+    <div class="titulo_historial">
+	    <h1 class="title">Su historial</h1>
     </div>
-    <?php
-    if($cart_cant[0][0] == 0){
-       
-        echo'
 
-            <div class="img_carrito_vacio">
-                <img src="../public/assets/img/istockphoto-830239112-612x612-removebg-preview.png">
-            </div>
-        ';
-    }else{
-         echo '
-         <div class="container_carrito" id="container_carrito"></div>
-         ';
-    }
-    ?>
+    <table class="table" >
+                                   
+    <thead class="table caption-top" >
+                                           
+        <tr>
+             <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Fecha</th>
+                <th></th> 
+        </tr>
+    </thead>
+        <tbody style="color:black">
+             <tr>
+                                                  
+                <?php
+                
+                $cart=$conexion -> consulta('pedidos_cliente','*',"Cliente = '$nomUser'");
+                foreach($cart as $row){
+                    $totalprice += $row["Precio"];
+                 if(substr($row['Imagen'], 0, 4) == "http")
+                 {
+                     $imagen_src = $row['Imagen'];
+                 }else 
+                 {
+                     $imagen_src = "../public/assets/img/Vinos/" . $row['Imagen'];
+                 }
+                 //echo $precio_total[0];
+                // echo $precio_total['precio_total'];
 
-  
-   
+                echo "<tbody style='color:black'>";
+                echo "<tr>";
+                 echo '<th>'.$row['Producto'].'</th>';
+                 echo '<th>'.$row['Cantidad'].'</th>';
+                 echo '<th>'.$row['Fecha'].'</th>';
+                  echo"</tr>";
+                  echo "</tbody>";
+
+             }
+                ?>                
+            </tr>
+        </tbody>
+    </table>
 <?php
 
-
+if($cart_cant[0][0]> 0){
+echo "
+    <div class='boton_pago'>
+        <a href='realizar_pago.php'>Realizar Pago</a>
+     </div>
+     ";
+}
      ?>
-
+</div>
 
     <?php
 include('../src/includes/footer.php');

@@ -17,9 +17,9 @@ if(isset($session)){ //Si existe inicio de sesion
 
     if(basename($_SERVER['PHP_SELF']) == 'Admin.php'){
         if($usuario[0]['tipo']==3){
-            header("location: ../Usuario/Account.php");
+            header("location: ../src/Account.php");
         }else if($usuario[0]['tipo']==2){
-            header("location: productos.php");
+            header("location: ../src/productos.php");
         }
     }
 
@@ -32,9 +32,9 @@ if(isset($session)){ //Si existe inicio de sesion
     $tel= ucfirst(utf8_decode($personaLog[0][4]));
     
 }else{
-    if(basename($_SERVER['PHP_SELF'])!='index.php' && basename($_SERVER['PHP_SELF'])!='Catalogo.php' && basename($_SERVER['PHP_SELF'])!='producto.php'){
+    if(basename($_SERVER['PHP_SELF'])!='index.php' && basename($_SERVER['PHP_SELF'])!='Catalogo.php' && basename($_SERVER['PHP_SELF'])!='ver_producto.php'){
         $error="Inicie sesion para acceder al sitio.";
-        header("location: ../formulario.php?error=$error");
+        header("location: ../src/formulario.php?error=$error");
         die();
     }
 

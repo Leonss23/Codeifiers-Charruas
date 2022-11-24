@@ -71,18 +71,12 @@ if(isset($_POST['register'])){
                   //echo $datoUsr;
                      if(count($datoUsr)==1){
                         $datoC=$conexion->insertar("cliente","nom_cli","'{$_POST['user']}'");  //Se le insertara en la tabla cliente el nombre usuario si viene desde el registro
+                       
                         $carritoInsert=$conexion->insertar("carrito","nom_cli","'{$_POST['user']}'");
                         $pedInsert=$conexion->insertar("pedido","nom_cli","'{$_POST['user']}'");
-
-                        $carritoCon=$conexion -> consulta('carrito','*'," nom_cli='$nomUser' AND estado = 1"); //Carrito aCTIVO
-                        $pedConst=$conexion -> consulta('pedido','*'," nom_cli='$nomUser' AND estado = 1"); //Carrito pedido
-                        
-                        if($carritoCon > 0 && $pedConst>0){
-                           $CarritoEstaPedido= $conexion->insertar("esta","id_ped,id_cart","{$pedConst[0][0]},{$carritoCon[0][0]}");
-            
-                        }
                         
                         $validar=1;
+                      
                         
                      }  
   
@@ -113,6 +107,12 @@ if(isset($_POST['register'])){
          session_start();
          $_SESSION['usuario']=$usuario;
          
+         $carritoCon=$conexion -> consulta('carrito','*'," nom_cli='{$usuario}' AND estado = 1"); //Carrito aCTIVO
+         $pedConst=$conexion -> consulta('pedido','*'," nom_cli='{$usuario}' AND estado = 1"); //Carrito pedido
+         
+         if($carritoCon > 0 && $pedConst>0){
+            $CarritoEstaPedido= $conexion->insertar("esta","id_ped,id_cart","{$pedConst[0][0]},{$carritoCon[0][0]}");     
+         }
           //Lo logueo llevandolo a la pagina principal
            if(($datoUsr[0]['tipo'])==3){ //
             //echo "Log automatico";

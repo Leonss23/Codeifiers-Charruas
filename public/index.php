@@ -1,5 +1,5 @@
 <?php 
-   // error_reporting(0);
+   error_reporting(0);
     
     include ('../src/includes/bd.php');
     //include ('../src/validacion.php');
@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="../public/css/responsive.css">
     <link rel="stylesheet" href="../public/css/header.css">
     <link rel="stylesheet" href="../public/css/footer.css">
+    <link rel="stylesheet" href="../public/css/User.css">
     <link rel="icon" href="../public/assets/img/Logo/Logo Charruas.png" width="200" height="100">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
@@ -49,7 +50,7 @@ include('../src/includes/header.php');
     <div class="titulo">
 	<h1 class="title">OFERTAS</h1>
     </div>
-    <div id="producto_agregado" class="producto_agregado" style="display: none;">
+    <div id="producto_agregado" class="producto_agregado"  style="display: none;">
 
     <i class="fa-solid fa-circle-check" id="icono_check"></i>  
 

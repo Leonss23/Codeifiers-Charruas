@@ -1,8 +1,6 @@
 <?php 
     include ('validacion.php');
-       /// include ('../Conexion/bd.php');
-   //$conexion = new Conexion();
-   // $conn = $conexion -> connexc();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,6 +100,7 @@
 
                                         <?php
                                           $persona=$conexion->consulta("persona","*","");
+
                                         //$contador=0;
                                         foreach($persona as $p)
                                         {
@@ -164,6 +163,10 @@
                 <form action="new_user.php" method="POST">
                     <p>Persona:</p>
                     <?php 
+                           
+                           $tipo = $conexion->consulta("usuarios","*"," tipo = 1 OR tipo = 2");
+                        
+                        
                                if(isset($_GET['error2'])){
                                 echo '
                                    <div class="alert alert-danger d-flex align-items-center" charruase="alert">
@@ -174,23 +177,26 @@
                            
                                }
                                ?>
-                    <select name="SelectPersona" id="" style="height:40px;">
+                    <select name="SelectPersona" id="" style="height:40px; margin: 1vh 0px 2vh 0px;">
                         <?php
-                            foreach($persona as $per){
-
+                      
+                            foreach($tipo as $per){
+                                
+                           
                                  echo "
-                                     <option name='UserCI' value='{$per['ci']}'>{$per['ci']} - {$per['nombre']} </option>
+                                     <option name='UserCI' value='{$per['ci']}'> {$per['ci']} - {$per['nom_usr']} </option>
                                 ";
                                                      
                                     
                             }
                             ?>
+                     
                     </select> 
                     <input type="text" class="form-control mb-3" name="user" id="usuario_new_user" placeholder="Usuario" required >
                     <input type="hidden" class="form-control mb-3" name="password" placeholder="Contraseña" value="123456">
                         <div style="display: flex; " >
                             <input type="text" class="form-control mb-3" name="tipo" placeholder="Tipo: " disabled style="width:100px;"> 
-                                <select name="seleccionar" id="seleccionar">
+                                <select name="seleccionar" id="seleccionar" style=" border: 0; text-align: center; align-items: center; display: flex; height: 40px; justify-content: center; align-content: center;">
                                     <option value="3">Cliente</option>
                                 </select>  
                         </div> 

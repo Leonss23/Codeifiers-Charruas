@@ -1,5 +1,6 @@
 <!--PHP-->
 <?php 
+ error_reporting(0);
     include ('validacion.php');
 
 ?>

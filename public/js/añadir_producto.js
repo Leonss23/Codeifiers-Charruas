@@ -3,11 +3,10 @@ let cart = new Set();
 
 function cargar_producto(id) {
   let cant = Number(document.getElementById(`cant_prod${id}`).value);
-  //console.log("Cantidad",cant);
+  //console.log("Cantidad",cant,"</br>", "id",id);
   const data = new FormData();
   data.set("id", id);
   data.set("cantidad", cant);
-  //console.log(data.get("id"));
 
   fetch('../src/agregar_producto.php',
     {
@@ -23,16 +22,18 @@ function cargar_producto(id) {
     })
     .then(function (texto) {
       //console.log(texto);
-      console.log("Entro");
+      console.log(id);
 
       //Muestro notificacion de que producto fue agregado
       uno = document.getElementById(`producto_agregado`);
       MsgC = document.getElementById(`Agregado_texto`); //Mensaje de texto
-      MsgC.innerHTML = `Artículo añadido correctamente a tu compra `;
+       MsgC.innerHTML = `Artículo añadido correctamente a tu compra`;
       uno.style.display = "flex"; setTimeout(() => {
         uno.style.display = 'none';
       }, 2000);
       
+
+
       let cantidad_carrito = document.querySelector(`#cantidad_carrito`);
       if(cart.has(id)){
       }else{
@@ -49,43 +50,37 @@ function cargar_producto(id) {
 }
 
 
-
-function restar_producto(id) {
-
-
+function restar_producto(id) 
+{
   const data = new FormData();
   data.set("id", id);
 
-
   fetch('../src/quitar_producto.php',
-    {
-      method: 'POST',
-      body: data
-    })
-    .then(function (response) {
-      if (response.ok) {
-        return response.text();
-      } else {
-        throw "Error";
-      }
-    })
-    .then(function (texto) {
-      //console.log(texto);
-     let cant_counter =  document.querySelector(`#cart_cant_prod${id}`);
-     if(cant_counter.value > 1){
-       cant_counter.value -= 1;   
-      
-      }
-      console.log(cant_counter.value);
- //console.log("Se quito");
+  {
+    method: 'POST',
+    body: data
+  })
+  .then(function (response) 
+  {
+    if (response.ok) {
+      return response.text();
+    } else {
+      throw "error";
+    }
+  })
+  .then(function (texto) 
+  {
+    let cant_counter =  document.querySelector(`#cart_cant_prod${id}`);
 
- load_cart();
-
-})
-    .catch (function (err) {
-  console.log(err);
-});
-  }
+    (cant_counter.value > 1)? cant_counter.value-- : console.log("No puede restar a menos de un producto. elimine.");
+    console.log("Producto reducido en un item correctamente.");
+    load_cart();
+  })
+  .catch (function (err) 
+  {
+    console.log(err);
+  });
+}
 
 function agregar_producto(id) {
 
@@ -111,8 +106,6 @@ function agregar_producto(id) {
       cant_counter.value = Number(cant_counter.value) + 1 ;
       //console.log("Agrego actualizo");
       load_cart();
-
-
     })
     .catch(function (err) {
       console.log(err);
@@ -141,6 +134,7 @@ function eliminar(id){
       let cantidad_carrito = document.querySelector(`#cantidad_carrito`);
       cantidad_carrito.innerHTML = Number(cantidad_carrito.innerHTML) -1;  
        load_cart();
+       location.reload();
      
       //console.log("Agrego actualizo");
 

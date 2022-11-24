@@ -184,14 +184,4 @@
     display: none;
   }
 
-
-  /*Titulo de los articulos*/
-  div.titulo {
-    /*width: 30vw;
-  height: 5vh;*/
-    /*background-color: #23232370;*/
-    text-align: center;
-    margin: 0px auto 1em auto;
-  }
-
 }

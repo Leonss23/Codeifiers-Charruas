@@ -1,9 +1,9 @@
 function update_producto(id){
-    let cantidad = document.getElementById(`cantidad${id}`).value;
+    let cantidad = document.getElementById(`cantidad_update${id}`).value;
 console.log(cantidad);
+if(cantidad){
 
-
-const data = new FormData();
+  const data = new FormData();
   data.set("id", id);
   data.set("cantidad", cantidad);
 
@@ -31,5 +31,26 @@ const data = new FormData();
     .catch(function (err) {
       console.log(err);
     });
+}else{
 
+        //Muestro notificacion de que producto fue agregado
+        uno = document.getElementById(`mensaje`);
+        MsgC = document.getElementById(`Agregado_texto`); //Mensaje de texto
+         MsgC.innerHTML = `
+         <i class="fa-solid fa-triangle-exclamation"></i>
+         Para añadir stock tiene que darle a editar`;
+        uno.style.display = "flex"; setTimeout(() => {
+          uno.style.display = 'none';
+        }, 2000);
+
+}
+
+
+}
+
+function habilitar_update(id){
+  let cantidad = document.getElementById(`cantidad${id}`).value;
+  //console.log(cantidad);
+  
+  document.getElementById(`cantidad_update${id}`).type= "number";
 }

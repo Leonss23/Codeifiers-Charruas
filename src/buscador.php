@@ -28,8 +28,7 @@ $numero = mysqli_num_rows($buscardor); ?>
             <div class="container-name-product"><h3 class="name-product">Placeholder </h3>' . $z . ' </div>    
             <div class="precios"><p class="price-product"></p></div>
             <div class="inputs">
-                <input type="number" name="cantidad" id="cantidad" value="1">
-            <input type="submit" value="AGREGAR">
+      
                
             </div>
            
@@ -52,7 +51,7 @@ $numero = mysqli_num_rows($buscardor); ?>
             echo " <div class='inputs'>
                 <input type='number' name='cantidad' id='cantidad' value='1'>
            
-                <input name='agregar' type='submit' value='AGREGAR'>
+                
                
 		    </div>"; //Contenedor con los botones
             echo "</div>";

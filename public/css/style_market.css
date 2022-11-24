@@ -46,7 +46,7 @@ div.titulo{
 }
 div.titulo_catalogo{
   text-align: center;
-  margin: 9em auto -4em auto;
+  margin: 12vw auto -4em auto;
 }
 
 .celda_market
@@ -248,8 +248,8 @@ font-size: 25px;
   /*Contenedor de flecha de subir*/
   div.subir_arriba_container{
   
-    width: 4vw;
-    height: 8vh;
+    width: 2vw;
+    height: 2vw;
     border-radius: 50%;
     background: var(--negro);
     color: white;
@@ -262,6 +262,7 @@ font-size: 25px;
     align-items: center;
     font-size: 20px;
     bottom: 2vw;
+    z-index: 1;
   }
   div.subir_arriba_container:hover{
     cursor: pointer;
@@ -270,7 +271,29 @@ font-size: 25px;
   }
 
   }
+@media screen and (min-width: 1400px){
+  div.titulo_catalogo{
+    text-align: center;
+    margin: 10vw auto -4em auto;
+  }
+  .celda_market
+{
+    overflow: hidden;
+    scroll-behavior: smooth;
+    background: transparent;
+    display: grid;
+    grid-template-columns: 16vw 16vw 16vw 16vw 16vw;
+    grid-gap: 1vw;
+    padding: 1vw;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    margin-top: 10vh;
+}
 
+}
 @media (max-width: 1024px) {
     *{
       user-select: none;
@@ -471,9 +494,9 @@ font-size: 25px;
   margin-left: 10px;
   }
   
-  div.subir_arriba_container{
+  div.subir_arriba_container,.fa-arrow-up {
     display: none;
-  }
+    }
 
   }
 
@@ -519,11 +542,11 @@ div.titulo{
   height: 5vh;*/
   /*background-color: #23232370;*/
   text-align: center;
-  margin: 14vh auto 1em auto;
+  margin: 4vh auto 1em auto;
 }
 div.titulo_catalogo {
   text-align: center;
-  margin-top: 24vw;
+  margin-top: 7vw;
 }
     
     .celda_market {
@@ -537,6 +560,7 @@ div.titulo_catalogo {
     /* padding: 1vw; */
     align-items: center;
     justify-items: center;
+
     }
     
     .img_prod 
@@ -673,8 +697,9 @@ font-size: 25px;
   font-size: 20px;
   margin-left: 10px;
   }
-  div.subir_arriba_container{
+
+  div.subir_arriba_container,.fa-arrow-up {
     display: none;
-  }
+    }
   
   }

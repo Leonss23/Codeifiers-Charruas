@@ -142,7 +142,7 @@ html{
         }
     }
 
-@media screen and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
     header{
         width: 100%;
         height: 10vh;
@@ -307,7 +307,7 @@ html{
        
 }
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 767px){
     header{
         width: 100vw;
         height: 10vh;
@@ -323,6 +323,7 @@ html{
         position: fixed;
         height: 10%;
         background-color: var(--negro);
+        z-index: 2;
         }
         #menu_despl{
             color: white;
@@ -330,7 +331,7 @@ html{
             position: relative;
             float: right;
             top: 0vw;
-            left: 56%;
+            left: 38%;
             z-index: 2;
         }
         .portrait_menu{
@@ -350,6 +351,7 @@ html{
         /*Despliegue del menu*/
         .portrait_menu.toggled{
             transform: translateX(0); 
+            z-index: 1;
         }
         div.img-logo{
             display: none;
@@ -359,7 +361,7 @@ html{
             position: relative;
             top: 0;
             display: flex;
-            left: calc(100px + 32vw);
+            left: calc(70px + 23vw);
             object-fit: fill;
             width: 100px;
             height: 100%;
@@ -442,7 +444,7 @@ html{
             position: relative;
             top: 0;
             float: left;
-            left: -35vw;
+            left: -42vw;
             font-size: 25px;
             }
             /*Icono de Usuario*/
@@ -456,5 +458,14 @@ html{
                 .fa-user, .fa-user-check{
                 padding: calc(5px + 0.5em);
                 color: white;
+                }
+                input#buscar_producto {
+                    height: 100%;
+                    background: transparent;
+                    border: 0;
+                    box-shadow: 0px 0px 1px 0px white;
+                    color: white;
+                    text-align: center;
+                    font-size: 20px;
                 }
 }

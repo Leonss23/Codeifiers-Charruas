@@ -398,6 +398,39 @@
     cursor: pointer;
   }
 
+  /*Input de agregar stock*/
+  input.cantidad_update{
+    width: 10vw;
+    height: 10vh;
+    border: 0;
+    text-align: center;
+    font-size: 15px;
+  }
+  /*Mensaje de errores Producto*/
+  #mensaje{
+    transition: 3s linear;
+    width: 627px;
+    height: 100px;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    top: 20%;
+    left: 2%;
+    /* transform: translate(5%, 5%); */
+    background-color: #f8d7da;
+    box-shadow: 0px 0px 2px 0px black;
+    color: white;
+    padding: 11px;
+    z-index: 1;
+  
+  }
+  #mensaje h2{
+    color: #842029;
+    font-size: 25px;
+    margin-left: 10px;
+    }
 }
 
 @media (max-width: 1024px){
@@ -810,6 +843,41 @@
     color: black;
     font-size: 10vw;
   }
+
+  /*Input de agregar stock*/
+  input.cantidad_update{
+    width: 16vw;
+    height: 10vh;
+    border: 0;
+    text-align: center;
+    font-size: 15px;
+  }
+
+    /*Mensaje de errores Producto*/
+    #mensaje{
+      transition: 3s linear;
+      width: 527px;
+      height: 100px;
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      border-radius: 10px;
+      top: 20%;
+      left: 2%;
+      /* transform: translate(5%, 5%); */
+      background-color: #f8d7da;
+      box-shadow: 0px 0px 2px 0px black;
+      color: white;
+      padding: 11px;
+      z-index: 1;
+    
+    }
+    #mensaje h2{
+      color: #842029;
+      font-size: 25px;
+      margin-left: 10px;
+      }
 }
 
 @media (max-width: 767px){
@@ -1225,4 +1293,39 @@
     color: black;
     font-size: 10vw;
   }
+
+
+  /*Input de agregar stock*/
+  input.cantidad_update{
+    width: 26vw;
+    height: 10vh;
+    border: 0;
+    text-align: center;
+    font-size: 15px;
+  }
+    /*Mensaje de errores Producto*/
+    #mensaje{
+      transition: 3s linear;
+      width: 90%;
+      height: 100px;
+      position: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      border-radius: 10px;
+      top: 20%;
+      left: 2%;
+      /* transform: translate(5%, 5%); */
+      background-color: #f8d7da;
+      box-shadow: 0px 0px 2px 0px black;
+      color: white;
+      padding: 11px;
+      z-index: 1;
+    
+    }
+    #mensaje h2{
+      color: #842029;
+      font-size: 25px;
+      margin-left: 10px;
+      }
 }
