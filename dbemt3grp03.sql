@@ -11,6 +11,8 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+CREATE USER 'equipo03'@'%' identified by '3quip0_III';
+GRANT all ON dbemt3grp03.* TO 'equipo03'@'%';
 
 --
 -- Base de datos: `dbemt3grp03`
