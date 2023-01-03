@@ -1,6 +1,6 @@
 # Codeifiers-Charruas
 
-Proyecto de fin de año de Codeifiers
+Proyecto de fin de año de Codeifiers (e-commerce, boutique de vinos.)
 
 Webhost: https://charruascodeifiers.000webhostapp.com/
 
