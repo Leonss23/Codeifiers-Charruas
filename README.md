@@ -5,7 +5,7 @@
 ## Proyecto de fin de año de Codeifiers (e-commerce, boutique de vinos.)
 
 - No frameworks or libraries used.
-- Raw PHP, JS, HTML and CSS.
+- Raw PHP, JS, CSS.
 
 Webhost: https://charruascodeifiers.000webhostapp.com/
 
