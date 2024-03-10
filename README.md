@@ -1,11 +1,10 @@
 # Codeifiers-Charruas
 
-**Note: For this project, I wasn't the programmer, I just fixed the most troublesome bugs when I had time as I had other roles.**
+**Note: For this project, programming wasn't my role, but I did fix the most troublesome bugs when I had time.**
 
 ## Proyecto de fin de año de Codeifiers (e-commerce, boutique de vinos.)
 
-- No frameworks or libraries used.
-- Raw PHP, JS, CSS.
+- LAMP stack, with no frameworks or libraries.
 
 Webhost: https://charruascodeifiers.000webhostapp.com/
 
